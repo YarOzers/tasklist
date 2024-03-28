@@ -78,7 +78,7 @@ $BODY$
 		/* у новой категории кол-во незавершенных увеличится на 1 */
 		update tasklist.public.category set uncompleted_count = uncompleted_count+1 where id = new.category_id;
 	    /* общая статистика */
-		update stat set uncompleted_total = uncompleted_total+1, completed_total = completed_total-1  where id=1;
+		update tasklist.public.stat set uncompleted_total = uncompleted_total+1, completed_total = completed_total-1  where id=1;
 	END IF;
 
     /* изменили категорию, изменили completed с 0 на 1 */
